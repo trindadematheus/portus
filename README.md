@@ -1,35 +1,34 @@
-## Electron + TypeScript + React
+## 🐋 portus
 
-Boilerplate for a project using Electron, React and Typescript.
+Docker containers 3D viewer - 🚧 under development construction 🚧
 
-## Installation
+![screenshot](https://raw.githubusercontent.com/trindadematheus/portus/master/screenshot.png)
 
-Use a package manager of your choice (npm, yarn, etc.) in order to install all dependencies
+### Features
 
-```bash
-yarn
-```
+- [x] List all containers with status and name
+- [x] 3D Camera control
+- [ ] Start/stop container
+- [ ] Remove container
 
-## Usage
+### Build with
 
-Just run `start` script.
+- [Electron](https://www.electronjs.org/) - Build cross-platform desktop apps with JavaScript, HTML, and CSS
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [Three.js](https://threejs.org/) - JavaScript 3D Library
+- [React Three](https://github.com/pmndrs/react-three-fiber) - A React renderer for Three.js
+- [dockerode](https://github.com/apocas/dockerode) - Node.js module for Docker's Remote API
 
-```bash
-yarn start
-```
+<br/>
 
-## Packaging
+---
 
-To generate the project package based on the OS you're running on, just run:
+<br/>
 
-```bash
-yarn package
-```
+<p align="center">Made by <b>Matheus Trindade</b> from <b>Salvador, Bahia - Brasil</b></p>
 
-## Contributing
-
-Pull requests are always welcome 😃.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+<p align="center">
+  <a href="https://twitter.com/trnddev">Twitter</a> •
+  <a href="https://www.linkedin.com/in/trindadematheus/">Linkedin</a> •
+  <a href="https://matheustrindade.dev.br/">Site</a>
+</p>
