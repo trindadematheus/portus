@@ -1,4 +1,13 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const float = keyframes`
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(6px);
+  }
+`
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -10,6 +19,7 @@ export const Wrapper = styled.div`
 
   img {
     height: 200px;
+    animation: ${float} 2s linear infinite both alternate;
   }
 
   h2 {
