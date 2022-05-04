@@ -12,8 +12,6 @@ const CameraControls = () => {
 }
 
 function Scene({ containers }: any) {
-  console.log(containers)
-
   return (
     <>
       <Canvas shadows camera={{ position: 5 }}>

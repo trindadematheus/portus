@@ -13,6 +13,7 @@ const dockerConnection = new Docker({ socketPath: '/var/run/docker.sock' })
 
 export async function listDockerContainers(mainWindow: BrowserWindow) {
   dockerConnection.listContainers({ all: true }, function (_err, containers) {
+    console.log(_err)
     mainWindow.webContents.send('containers:list:response', containers)
   })
 }

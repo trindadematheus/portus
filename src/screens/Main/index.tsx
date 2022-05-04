@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
 
 import { Container, Image, Text } from './styles'
-import DockerContainer from '../../components/DockerContainer'
 import Scene from '../../components/Scene'
 
 export function MainScreen() {
   const [containersList, setContainersList] = useState([])
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     handleGetContainers()
@@ -15,12 +14,28 @@ export function MainScreen() {
 
   function registerEvents() {
     window.Main.on('containers:list:response', (containers: any) => {
+      if (!containers) {
+        setError(true)
+
+        return
+      }
+
       setContainersList(containers)
     })
   }
 
   function handleGetContainers() {
     window.Main.emit('containers:list:request')
+  }
+
+  if (error) {
+    return (
+      <>
+        <Container>
+          <Text>HOUVE UM ERRO AO CARREGAR OS CONTAINERS</Text>
+        </Container>
+      </>
+    )
   }
 
   return (
