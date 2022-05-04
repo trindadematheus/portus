@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Container, Image, Text } from './styles'
+import { Container } from './styles'
 import Scene from '../../components/Scene'
 import ErrorScreen from '../../components/ErrorScreen'
 import LoadingScreen from '../../components/LoadingScreen'
