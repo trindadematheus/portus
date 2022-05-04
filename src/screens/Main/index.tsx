@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { Container, Image, Text } from './styles'
 import Scene from '../../components/Scene'
+import ErrorScreen from '../../components/ErrorScreen'
 
 export function MainScreen() {
   const [containersList, setContainersList] = useState([])
@@ -29,13 +30,7 @@ export function MainScreen() {
   }
 
   if (error) {
-    return (
-      <>
-        <Container>
-          <Text>HOUVE UM ERRO AO CARREGAR OS CONTAINERS</Text>
-        </Container>
-      </>
-    )
+    return <ErrorScreen />
   }
 
   return (
