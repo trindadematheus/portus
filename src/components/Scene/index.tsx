@@ -1,5 +1,6 @@
 import { OrbitControls } from '@react-three/drei'
 import { Canvas, useThree } from '@react-three/fiber'
+import { handleContainerPosition } from '../../utils/getContainerPosition'
 
 import DockerContainer from '../DockerContainer'
 
@@ -18,7 +19,7 @@ function Scene({ containers }: any) {
         {containers.map((container, key) => (
           <DockerContainer
             container={container}
-            position={[key * 2.2, 0.5, 0]}
+            position={[handleContainerPosition(key), 0.5, 0]}
           />
         ))}
 
