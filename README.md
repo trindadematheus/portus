@@ -1,34 +1,77 @@
-## 🐋 portus
+# Turborepo starter with pnpm
 
-Docker containers 3D viewer - 🚧 under development construction 🚧
+This is an official starter turborepo.
 
-![screenshot](https://raw.githubusercontent.com/trindadematheus/portus/master/screenshot.png)
+## What's inside?
 
-### Features
+This turborepo uses [pnpm](https://pnpm.io) as a packages manager. It includes the following packages/apps:
 
-- [x] List all containers with status and name
-- [x] 3D Camera control
-- [ ] Start/stop container
-- [ ] Remove container
+### Apps and Packages
 
-### Build with
+- `docs`: a [Next.js](https://nextjs.org) app
+- `web`: another [Next.js](https://nextjs.org) app
+- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
-- [Electron](https://www.electronjs.org/) - Build cross-platform desktop apps with JavaScript, HTML, and CSS
-- [React](https://reactjs.org/) - JavaScript library for building user interfaces
-- [Three.js](https://threejs.org/) - JavaScript 3D Library
-- [React Three](https://github.com/pmndrs/react-three-fiber) - A React renderer for Three.js
-- [dockerode](https://github.com/apocas/dockerode) - Node.js module for Docker's Remote API
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-<br/>
+### Utilities
 
----
+This turborepo has some additional tools already setup for you:
 
-<br/>
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
 
-<p align="center">Made by <b>Matheus Trindade</b> from <b>Salvador, Bahia - Brasil</b></p>
+## Setup
 
-<p align="center">
-  <a href="https://twitter.com/trnddev">Twitter</a> •
-  <a href="https://www.linkedin.com/in/trindadematheus/">Linkedin</a> •
-  <a href="https://matheustrindade.dev.br/">Site</a>
-</p>
+This repository is used in the `npx create-turbo@latest` command, and selected when choosing which package manager you wish to use with your monorepo (pnpm).
+
+### Build
+
+To build all apps and packages, run the following command:
+
+```
+cd my-turborepo
+pnpm run build
+```
+
+### Develop
+
+To develop all apps and packages, run the following command:
+
+```
+cd my-turborepo
+pnpm run dev
+```
+
+### Remote Caching
+
+Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+
+By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```
+cd my-turborepo
+pnpx turbo login
+```
+
+This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+
+Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+
+```
+pnpx turbo link
+```
+
+## Useful Links
+
+Learn more about the power of Turborepo:
+
+- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
+- [Caching](https://turborepo.org/docs/core-concepts/caching)
+- [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching)
+- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
+- [Configuration Options](https://turborepo.org/docs/reference/configuration)
+- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
