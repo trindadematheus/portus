@@ -1,10 +1,18 @@
 import { Suspense, useState } from 'react'
 import { Text } from '@react-three/drei'
+import { useLoader } from '@react-three/fiber'
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
 
-import getContainerColor from '../../utils/getContainerColor'
+import blueContainerImage from '../../assets/blue-container.png'
+import redContainerImage from '../../assets/red-container.png'
 
 function DockerContainer(props: any) {
   const [clicked, click] = useState(false)
+
+  const texture_1 = useLoader(
+    TextureLoader,
+    props.container.State === 'running' ? blueContainerImage : redContainerImage
+  )
 
   return (
     <>
@@ -17,14 +25,17 @@ function DockerContainer(props: any) {
       >
         <boxGeometry args={[2, 1, 1]} />
 
-        <meshStandardMaterial
-          color={getContainerColor(props.container.State)}
-        />
+        <meshStandardMaterial map={texture_1} attach="material" />
+        <meshStandardMaterial map={texture_1} attach="material" />
+        <meshStandardMaterial map={texture_1} attach="material" />
+        <meshStandardMaterial map={texture_1} attach="material" />
+        <meshStandardMaterial map={texture_1} attach="material" />
+        <meshStandardMaterial map={texture_1} attach="material" />
 
         <Suspense fallback={null}>
           {/* @ts-ignore */}
           <Text
-            color={'#EC2D2D'}
+            color={'black'}
             fontSize={0.1}
             lineHeight={1}
             letterSpacing={0.02}
@@ -33,7 +44,7 @@ function DockerContainer(props: any) {
             anchorX="center"
             anchorY="middle"
             depthOffset={12}
-            position={[0, 0, 0.7]}
+            position={[0, 0, 0.6]}
           >
             {props.container.Names[0]}
           </Text>

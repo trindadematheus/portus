@@ -4,10 +4,12 @@ importers:
 
   .:
     specifiers:
+      '@types/three': ^0.140.0
       desktop: workspace:^1.0.0
       prettier: latest
       turbo: latest
     dependencies:
+      '@types/three': 0.140.0
       desktop: link:apps/desktop
     devDependencies:
       prettier: 2.6.2
@@ -2733,6 +2735,10 @@ packages:
     dependencies:
       '@types/jest': 26.0.23
     dev: true
+
+  /@types/three/0.140.0:
+    resolution: {integrity: sha512-YPJLSIY6uKUOp1k6BZYDq5GtEIdhfeK04UCbc9IPAVbdn/RNjkfrbnyd7smrsNkJhc0IFASLpd3AAYgwqgXKVQ==}
+    dev: false
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}

@@ -1,5 +1,6 @@
 import { OrbitControls } from '@react-three/drei'
 import { Canvas, useThree } from '@react-three/fiber'
+import { Suspense } from 'react'
 import { handleContainerPosition } from '../../utils/getContainerPosition'
 
 import DockerContainer from '../DockerContainer'
@@ -17,10 +18,12 @@ function Scene({ containers }: any) {
     <>
       <Canvas shadows camera={{ position: 5 }}>
         {containers.map((container, key) => (
-          <DockerContainer
-            container={container}
-            position={[handleContainerPosition(key), 0.5, 0]}
-          />
+          <Suspense key={key} fallback={null}>
+            <DockerContainer
+              container={container}
+              position={[handleContainerPosition(key), 0.5, 0]}
+            />
+          </Suspense>
         ))}
 
         <gridHelper args={[100, 10]} />
